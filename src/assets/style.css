@@ -28,7 +28,6 @@ audio:not([controls]) {
   display: none; }
 
 html {
-  background: #fff;
   color: #000;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
@@ -258,6 +257,9 @@ form textarea {
   border-radius: 30px;
   color: white; }
 
+.search-input {
+  border: 1px solid;
+}
 .map {
   height: 220px; }
 
