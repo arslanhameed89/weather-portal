@@ -1,11 +1,11 @@
 <template>
-      <weather :title="title"
-               :temprature="temp"
-               :min-temprature="minTemp"
-               :max-temprature="maxTemp"
-               :icon="icon"
-               @detailPage="onDetailPage"
-      ></weather>
+    <weather :title="title"
+             :temprature="temp"
+             :min-temprature="minTemp"
+             :max-temprature="maxTemp"
+             :icon="icon"
+             @detailPage="onDetailPage"
+    ></weather>
 </template>
 
 <script>
@@ -16,15 +16,15 @@
         components: {
             Weather
         },
-        props : ['item'],
+        props: ['item'],
         computed: {
-            consolidated () {
+            consolidated() {
                 if (this.item && this.item.consolidated_weather) {
                     return this.item.consolidated_weather[0]
                 }
                 return null
             },
-            title () {
+            title() {
                 return this.item.title
             },
             minTemp() {
@@ -45,7 +45,7 @@
                 }
                 return null
             },
-            icon () {
+            icon() {
                 if (this.consolidated !== null) {
                     return this.consolidated.weather_state_abbr
                 }
@@ -53,9 +53,9 @@
             },
 
         },
-        methods : {
-            onDetailPage () {
-                this.$router.push({ name: 'weather-detail', params: { woeid: this.item.woeid }})
+        methods: {
+            onDetailPage() {
+                this.$router.push({name: 'weather-detail', params: {woeid: this.item.woeid}})
             }
         }
     }

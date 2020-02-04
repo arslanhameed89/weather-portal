@@ -43,7 +43,7 @@ export default {
         },
         async fetchWeatherDefaults({commit, dispatch}, keyword) {
             try {
-                const response =  await dispatch('searchByKeyword', keyword)
+                const response = await dispatch('searchByKeyword', keyword)
                 //console.info(response.shift(),"kaka roya")
                 //let dummy = '[{"title":"Berlin","location_type":"City","woeid":638242,"latt_long":"52.516071,13.376980"}]';
                 commit('updateLocations', response.shift())

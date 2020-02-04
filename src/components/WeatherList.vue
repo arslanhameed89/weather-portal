@@ -1,8 +1,8 @@
 <template>
     <div class="forecast-container">
-      <weather-item v-for="(item, itemIndex) in locations" :key="itemIndex"
-               :item="item"
-      ></weather-item>
+        <weather-item v-for="(item, itemIndex) in locations" :key="itemIndex"
+                      :item="item"
+        ></weather-item>
     </div>
 </template>
 
@@ -13,7 +13,7 @@
     export default {
         name: 'WeatherList',
         components: {
-          WeatherItem
+            WeatherItem
         },
         computed: {
             ...mapState('weather', ['locations', 'errors'])

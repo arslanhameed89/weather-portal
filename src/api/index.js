@@ -30,10 +30,6 @@ export default {
                     reject(error.message)
                 });
         })
-        /*return axios.get(searchUrl(keyword)).then(r  => {
-            console.log(r, 'basit')
-            return r.data
-        } ).catch(errorHandler)*/
     },
     getByWoeid(woeid) {
         return axios.get(locationUrl(woeid)).then(r => r.data).catch(errorHandler)
