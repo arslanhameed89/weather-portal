@@ -1,16 +1,16 @@
 <template>
-  <div class="search-result text-center">
+  <div class="forecast-container">
     <div v-if="loading">Searching for location {{input}}, please wait...</div>
-    <div v-else>
-      <div v-if="locations.length > 0">
+    <span v-else>
+      <span v-if="locations.length > 0">
         <h3>Search result of {{input}}.</h3>
         <weather-item v-for="(item, itemIndex) in locations" :key="itemIndex"
                       :item="item"
         ></weather-item>
 
-      </div>
+      </span>
       <div v-else>No results were found. Try changing the keyword!</div>
-    </div>
+    </span>
   </div>
 </template>
 

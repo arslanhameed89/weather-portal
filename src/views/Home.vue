@@ -1,13 +1,10 @@
 <template>
-  <div class="home">
+  <div>
     <div class="forecast-table">
       <div class="container">
-
         <weather-list></weather-list>
       </div>
     </div>
-
-
   </div>
 </template>
 
