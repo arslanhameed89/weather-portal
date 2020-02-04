@@ -1,22 +1,31 @@
 <template>
-  <div class="forecast">
-    <div class="forecast-header">
-      <div class="day">Tuesday</div>
-    </div> <!-- .forecast-header -->
-    <div class="forecast-content">
-      <div class="forecast-icon">
-        <img src="images/icons/icon-3.svg" alt="" width=48>
-      </div>
-      <div class="degree">23<sup>o</sup>C</div>
-      <small>18<sup>o</sup></small>
+    <div class="forecast-container">
+      <weather-item v-for="(item, itemIndex) in locations" :key="itemIndex"
+               :item="item"
+      ></weather-item>
     </div>
-  </div>
 </template>
 
 <script>
-export default {
-  name: 'Weather'
-}
+    import WeatherItem from "./WeatherItem";
+    import {mapActions, mapState} from "vuex";
+
+    export default {
+        name: 'WeatherList',
+        components: {
+          WeatherItem
+        },
+        computed: {
+            ...mapState('weather', ['locations', 'errors'])
+        },
+        methods: {
+            ...mapActions({
+                "fetchWeatherDefaults": "weather/fetchWeatherDefaults",
+                "fetchDetail": "weather/fetchDetail",
+            })
+        }
+
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
