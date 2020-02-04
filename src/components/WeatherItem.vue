@@ -1,5 +1,4 @@
 <template>
-    <div class="forecast-container">
       <weather :title="title"
                :temprature="temp"
                :min-temprature="minTemp"
@@ -7,7 +6,6 @@
                :icon="icon"
                @detailPage="onDetailPage"
       ></weather>
-    </div>
 </template>
 
 <script>

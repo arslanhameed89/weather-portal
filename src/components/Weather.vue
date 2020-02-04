@@ -7,8 +7,9 @@
       <div class="forecast-icon">
         <img :src="icon" alt="" width=48>
       </div>
-      <div class="degree">{{temprature}}<sup>o</sup>C</div>
-      <small>{{minTemprature}}<sup>{{maxTemprature}}</sup></small>
+      <div class="degree">{{temprature}}</div>
+      <small>{{minTemprature}}<sup>min</sup></small> <br>
+      <small>{{minTemprature}}<sup>max</sup></small>
     </div>
   </div>
 </template>
